@@ -49,20 +49,22 @@ function getSortedColKey(sort: any) {
 }
 
 
-const PrismaTable: React.FC<PrismaTableProps> = ({
-                                                 data,
-                                                 colConfig,
-                                                 loading,
-                                                 onPageChange,
-                                                 onFilter,
-                                                 onSort,
-                                                 onSavePreference,
-                                                 preferenceKey,
-                                                 sort,
-                                                 pageSize = 10,
-                                                 totalItems,
-                                                 onSearch
-                                             }) => {
+const PrismaTable: React.FC<PrismaTableProps> = (
+    {
+        data,
+        colConfig,
+        loading,
+        onPageChange,
+        onFilter,
+        onSort,
+        onSavePreference,
+        preferenceKey,
+        sort,
+        pageSize = 10,
+        totalItems,
+        onSearch
+    }
+) => {
     const tableContainerRef = useRef<HTMLDivElement>(null);
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [displayData, setDisplayData] = useState<any[]>(data);
